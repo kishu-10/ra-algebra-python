@@ -1,0 +1,142 @@
+Query: SELE_{Payment > 70} (PAY)
+ANO,MNO,Payment
+A1,M1,79
+A1,M2,80
+A2,M2,83
+A2,M3,98
+A2,M4,96
+A3,M2,74
+A3,M3,98
+A4,M2,75
+A4,M3,85
+A5,M1,99
+A6,M2,77
+A6,M3,95
+
+Query: SELE_{Payment > 70} (PAY) (Shortened)
+ANO,MNO,Payment
+A1,M1,79
+A1,M2,80
+A2,M2,83
+
+Query: PROJ_{ANO} (ACTORS * PAY)
+ANO
+A1
+A2
+A3
+A4
+A5
+A6
+
+Query: PROJ_{ANO} (ACTORS * PAY) (Shortened)
+ANO
+A1
+A2
+A3
+
+Query: (PROJ_{ANO} (SELE_{Payment > 70} (PAY))) - (PROJ_{ANO} (SELE_{Payment < 60} (PAY)))
+ANO
+A1
+A2
+A3
+
+Query: (PROJ_{ANO} (SELE_{Payment > 70} (PAY))) - (PROJ_{ANO} (SELE_{Payment < 60} (PAY))) (Shortened)
+ANO
+A1
+A2
+A3
+
+Query: (PROJ_{ANO} (SELE_{Payment > 90} (PAY))) U (PROJ_{ANO} (SELE_{ANAME=’Swanson’} (ACTORS)))
+ANO
+A2
+A3
+A5
+A6
+
+Query: (PROJ_{ANO} (SELE_{Payment > 90} (PAY))) U (PROJ_{ANO} (SELE_{ANAME=’Swanson’} (ACTORS))) (Shortened)
+ANO
+A2
+A3
+A5
+
+Query: SELE_{ANAME = 'L Rivers'} (ACTORS)
+ANAME,ANO
+L Rivers,A1
+
+Query: SELE_{ANAME = 'L Rivers'} (ACTORS) (Shortened)
+ANAME,ANO
+L Rivers,A1
+
+Query: ACTORS X MOVIES
+ANAME,ANO,MNAME,MNO
+L Rivers,A1,Lost city,M1
+L Rivers,A1,Happy day,M2
+L Rivers,A1,Love the fun,M3
+L Rivers,A1,Laugh and live,M4
+D Flowers,A2,Lost city,M1
+D Flowers,A2,Happy day,M2
+D Flowers,A2,Love the fun,M3
+D Flowers,A2,Laugh and live,M4
+M Trunks,A3,Lost city,M1
+M Trunks,A3,Happy day,M2
+M Trunks,A3,Love the fun,M3
+M Trunks,A3,Laugh and live,M4
+J Grass,A4,Lost city,M1
+J Grass,A4,Happy day,M2
+J Grass,A4,Love the fun,M3
+J Grass,A4,Laugh and live,M4
+T Roots,A5,Lost city,M1
+T Roots,A5,Happy day,M2
+T Roots,A5,Love the fun,M3
+T Roots,A5,Laugh and live,M4
+L Hills,A6,Lost city,M1
+L Hills,A6,Happy day,M2
+L Hills,A6,Love the fun,M3
+L Hills,A6,Laugh and live,M4
+
+Query: ACTORS X MOVIES (Shortened)
+ANAME,ANO,MNAME,MNO
+L Rivers,A1,Lost city,M1
+L Rivers,A1,Happy day,M2
+L Rivers,A1,Love the fun,M3
+
+Query: PROJ_{ANO} (SELE_{Payment > 70} (PAY)) INTE PROJ_{ANO} (SELE_{Payment < 90} (PAY))
+ANO
+A1
+A2
+A3
+A4
+A5
+A6
+
+Query: PROJ_{ANO} (SELE_{Payment > 70} (PAY)) INTE PROJ_{ANO} (SELE_{Payment < 90} (PAY)) (Shortened)
+ANO
+A1
+A2
+A3
+
+"Query: JOIN_{ANO=ANO} (ACTORS, PAY)"
+ANAME,ANO,MNO,Payment
+L Rivers,A1,M1,79
+L Rivers,A1,M2,80
+D Flowers,A2,M2,83
+D Flowers,A2,M3,98
+D Flowers,A2,M4,96
+M Trunks,A3,M2,74
+M Trunks,A3,M3,98
+J Grass,A4,M2,75
+J Grass,A4,M3,85
+J Grass,A4,M4,55
+T Roots,A5,M1,99
+T Roots,A5,M3,56
+T Roots,A5,M4,55
+L Hills,A6,M2,77
+L Hills,A6,M3,95
+L Hills,A6,M4,54
+
+"Query: JOIN_{ANO=ANO} (ACTORS, PAY) (Shortened)"
+ANAME,ANO,MNO,Payment
+L Rivers,A1,M1,79
+L Rivers,A1,M2,80
+D Flowers,A2,M2,83
+

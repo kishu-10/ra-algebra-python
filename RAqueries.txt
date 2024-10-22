@@ -1,0 +1,8 @@
+SELE_{Payment > 70} (PAY)
+PROJ_{ANO} (ACTORS * PAY)
+(PROJ_{ANO} (SELE_{Payment > 70} (PAY))) - (PROJ_{ANO} (SELE_{Payment < 60} (PAY))) 
+(PROJ_{ANO} (SELE_{Payment > 90} (PAY))) U (PROJ_{ANO} (SELE_{ANAME=’Swanson’} (ACTORS)))
+SELE_{ANAME = 'L Rivers'} (ACTORS)
+ACTORS X MOVIES
+PROJ_{ANO} (SELE_{Payment > 70} (PAY)) INTE PROJ_{ANO} (SELE_{Payment < 90} (PAY))
+JOIN_{ANO=ANO} (ACTORS, PAY)
